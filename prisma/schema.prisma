@@ -1,0 +1,58 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider      = "prisma-client-js"
+  //M1 mac 로컬 테스트시 필요
+  // binaryTargets = ["native", "linux-musl-openssl-3.0.x", "linux-musl-arm64-openssl-1.1.x"]
+  // lightsail 컨테이너 배포시 필요
+  binaryTargets = ["native", "linux-musl"]
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  name      String
+  email     String
+  password  String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+  historys  History[]
+}
+
+model Question {
+  id             Int       @id @default(autoincrement())
+  testNumber     String //시험 번호
+  testType       Int //시험 타입 고1:0,고2:1,고3:2,수능:3,AI:4 // 6번 pdf 문제 풀이
+  questionNumber Int //문제 번호
+  question       String    @db.Text() //문제 
+  article        String    @db.Text() //문제 지문
+  options        String    @db.Text() //보기
+  answer         Int //답
+  questionType   String //문제 유형
+  solution       String    @db.Text() //문제 풀이
+  keyWords       String    @db.Text() //핵심단어
+  difficulty     Int? //난이도 nullable:true
+  incorrectRate  Int? //오답률 nullable:true
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  deletedAt      DateTime?
+}
+
+model History {
+  id         Int       @id @default(autoincrement())
+  testResult String    @db.Text()
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  deletedAt  DateTime?
+  User       User      @relation(fields: [userId], references: [id])
+  userId     Int
+}
