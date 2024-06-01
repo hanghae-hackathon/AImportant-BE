@@ -27,3 +27,18 @@ AImportant는 AI를 활용하여 수능 영어 문제와 고등학교 모의고�
 - **MySQL:** 데이터베이스로, Prisma를 통해 액세스됩니다. MySQL은 관계형 데이터베이스 관리 시스템(RDBMS) 중 하나로, 구조화된 데이터를 저장하고 관리하는 데 사용됩니다.
 - **AWS Lightsail:** 클라우드 호스팅 서비스로, Nest.js 애플리케이션을 배포하기 위해 사용됩니다. AWS Lightsail은 쉽고 간편한 클라우드 서버 배포를 제공합니다.
 - **Docker:** 컨테이너 기반 가상화 플랫폼으로, 애플리케이션의 환경을 컨테이너로 패키징하여 배포하고 실행할 수 있습니다.
+
+## API 엔드포인트
+
+  # User
+  - ** Post /user :** 유저 생성 
+  - ** Post /user/login :** 로그인
+  # Question
+  - ** Post /qustion :** 문제 1개 생성 
+  - ** Post /qustion/many :** 여러 문제 생성
+  - ** Get /qustion/random :** 랜덤 문제 받기
+  - ** Get /qustion/:id :** id로 문제 받기
+  - ** Patch /qustion/:id :** 문제 수정
+  - # History
+  - ** Post /history/:id :** 유저 히스토리 생성
+  - ** Get /history :** 유저 히스토리 받기
