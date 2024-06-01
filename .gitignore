@@ -1,0 +1,8 @@
+node_module/
+dist/
+*Dockerfile*
+.git
+# Keep environment variables out of version control
+.env
+Dockerfile
+node_modules
