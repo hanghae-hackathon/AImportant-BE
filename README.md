@@ -30,15 +30,15 @@ AImportant는 AI를 활용하여 수능 영어 문제와 고등학교 모의고�
 
 ## API 엔드포인트
 
-  # User
+  ### User
   - **Post /user :** 유저 생성 
   - **Post /user/login :** 로그인
-  # Question
+  ### Question
   - **Post /qustion :** 문제 1개 생성 
   - **Post /qustion/many :** 여러 문제 생성
   - **Get /qustion/random :** 랜덤 문제 받기
   - **Get /qustion/:id :** id로 문제 받기
   - **Patch /qustion/:id :** 문제 수정
-  # History
+  ### History
   - **Post /history/:id :** 유저 히스토리 생성
   - **Get /history :** 유저 히스토리 받기
