@@ -1,5 +1,6 @@
 # 발표자료
-[15팀_항해 해커톤 발표자료_0601_최종.pdf](https://github.com/user-attachments/files/15520533/15._._0601_.pdf)
+[15팀_항해 해커톤 발표자료_0601_최종.pdf](https://github.com/user-attachments/files/15520558/15._._0601_.pdf)
+
 
 
 # AImportant
